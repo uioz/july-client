@@ -1,25 +1,25 @@
 import { AppOption } from "./type";
+import { APP_ID } from "./env";
 
 interface UserDetail {
   globalData: {
-    userDetail: unknown
-  }
+    userDetail: unknown;
+  };
 }
 
-const USER_DETAIL_STORAGE_KEY = 'userdetail';
+const USER_DETAIL_STORAGE_KEY = "userdetail";
 
 // app.ts
 App<AppOption & UserDetail>({
   globalData: {
-    appId: 'wx0611fd1ba2b0bcd6',
+    appId: APP_ID,
     githubURL: `https://github.com/uioz/july_client/tree/dev`,
-    userDetail: undefined
+    userDetail: undefined,
   },
   onLaunch() {
-
     // 拉取缓存的用户信息
-    this.globalData.userDetail = wx.getStorageSync(USER_DETAIL_STORAGE_KEY) || undefined
-
+    this.globalData.userDetail =
+      wx.getStorageSync(USER_DETAIL_STORAGE_KEY) || undefined;
 
     // // 展示本地存储能力
     // const logs = wx.getStorageSync("logs") || [];

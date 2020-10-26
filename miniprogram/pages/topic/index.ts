@@ -1,22 +1,29 @@
+// import { APP_ID } from "../../env";
 // import { AppOption } from "../../type";
 // const app = getApp<AppOption>();
 
+import request from "../../utils/request";
+
+interface ResponseOfLabelItem {
+  click_count: number;
+  id: number;
+  name: string;
+  allowed_anon: boolean;
+}
+
 // miniprogram/pages/topic/index.js
 Page({
-
   /**
    * 页面的初始数据
    */
-  data: {
-
-  },
+  data: {},
 
   /**
    * 生命周期函数--监听页面加载
    */
-  // onLoad: function (options) {
-
-  // },
+  async onLoad() {
+    await request<Array<ResponseOfLabelItem>>({ url: "label" });
+  },
 
   /**
    * 生命周期函数--监听页面初次渲染完成
@@ -66,4 +73,4 @@ Page({
   // onShareAppMessage: function () {
 
   // }
-})
+});
