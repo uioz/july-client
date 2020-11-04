@@ -15,3 +15,4 @@ node_modules/
 
 # result of build
 miniprogram/miniprogram_npm
+miniprogram/**/*.js
