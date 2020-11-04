@@ -1,1 +1,12 @@
 /* miniprogram/pages/topic/index.wxss */
+.topic__navbar {
+  display: flex;
+  height: 50rpx;
+}
+
+.topic__navbar-item {
+  background-color: aqua;
+  margin:0 10rpx;
+  min-width: 100rpx;
+  
+}

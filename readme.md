@@ -17,3 +17,8 @@ step three:
 ```
 npm run dev
 ```
+
+# TODO LIST
+
+1. 添加 POSTCSS 支持
+2. 使用 GITFLOW
