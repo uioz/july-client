@@ -5,7 +5,7 @@ export default createRequest({
   url: "",
   baseUrl: "https://api.july.yejiefeng.com/api/v1/",
   requestInterceptor: (option) => {
-    if (option && "data" in option) {
+    if (option && !option.data) {
       option.data = {};
     }
     Object.assign(option.data, {

@@ -60,7 +60,9 @@ export function createRequest({
     requestInterceptor = requestInterceptor || outerRequest;
     responseInterceptor = responseInterceptor || outerResponse;
     errorInterceptor = errorInterceptor || outerError;
-    const url = (baseUrl || outerBaseUrl) + (restOptions.url || options.url);
+    // 注意这个最后的 / 再某些服务器的配置下如果地址末尾不使用 / 则会建立 http 连接而不是 https
+    const url =
+      (baseUrl || outerBaseUrl) + (restOptions.url || options.url) + "/";
 
     let task: WechatMiniprogram.RequestTask;
 
