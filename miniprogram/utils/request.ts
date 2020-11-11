@@ -16,7 +16,7 @@ export default createRequest({
   },
   responseInterceptor: (response, resolve) => {
     wx.hideNavigationBarLoading();
-    resolve(response.data);
+    resolve((response.data as any).data);
   },
   errorInterceptor: (error, _resolve, reject) => {
     wx.hideNavigationBarLoading();

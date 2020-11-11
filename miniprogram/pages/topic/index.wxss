@@ -1,12 +1,39 @@
 /* miniprogram/pages/topic/index.wxss */
-.topic__navbar {
-  display: flex;
-  height: 50rpx;
+.weui-tabs {
+  padding: 20rpx;
+  height: 90rpx;
+  background: #f7f7f7;
+  box-sizing: border-box;
 }
 
-.topic__navbar-item {
-  background-color: aqua;
-  margin:0 10rpx;
-  min-width: 100rpx;
-  
+.weui-tabs .weui-tabs-bar__wrp {
+  background-color: #f7f7f7;
+}
+
+.weui-tabs swiper {
+  display: none;
+}
+
+.weui-tabs-bar__item {
+  font-size: 14px;
+}
+
+.tab-bar-title__selected {
+  font-size: 16px;
+  font-weight: bold;
+}
+
+.weui-tabs-bar__title {
+  margin: 0px .5em;
+}
+
+
+.label-collapse {
+  position: fixed;
+  top: 0;
+  right: 0;
+  width: 60rpx;
+  height: 90rpx;
+  text-align: center;
+  background-color: #f7f7f7;
 }

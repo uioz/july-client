@@ -11,6 +11,13 @@ interface ResponseOfLabelItem {
   allowed_anon: boolean;
 }
 
+interface Label {
+  click_count: number;
+  id: number;
+  title: string;
+  allowed_anon: boolean;
+}
+
 // miniprogram/pages/topic/index.js
 Page({
   /**
@@ -18,30 +25,24 @@ Page({
    */
   data: {
     activeTab: 0,
-    tabs: [
-      {
-        title: "技术开发",
-      },
-      {
-        title: "产品解析",
-      },
-      {
-        title: "运营规范",
-      },
-      {
-        title: "营销经验",
-      },
-      {
-        title: "高校大赛",
-      },
-    ],
+    showDialog: false,
+    labels: [] as Array<Label>,
   },
 
   /**
    * 生命周期函数--监听页面加载
    */
   async onLoad() {
-    await request<Array<ResponseOfLabelItem>>({ url: "label" });
+    this.setData({
+      labels: (
+        await request<Array<ResponseOfLabelItem>>({ url: "label" })
+      ).map(({ name, ...rest }) => ({ title: name, ...rest })),
+    });
+  },
+  handleToggleCollapse() {
+    this.setData({
+      showDialog: !this.data.showDialog,
+    });
   },
 
   /**

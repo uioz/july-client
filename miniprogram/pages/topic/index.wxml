@@ -1,9 +1,14 @@
 <!--miniprogram/pages/topic/index.wxml-->
-<scroll-view class="topic__navbar" scroll-x enable-flex enhanced show-scrollbar="{{false}}">
-  <view class="topic__navbar-item" wx:for="{{[1,2,3,4,5,6,7,8,9,10]}}">
-    <text>{{item}}</text>
-  </view>
-</scroll-view>
-
-<mp-tabs tabs="{{tabs}}" activeTab="{{activeTab}}" activeClass="tab-bar-title__selected">
+<mp-tabs tabs="{{labels}}" activeTab="{{activeTab}}" activeClass="tab-bar-title__selected"
+  tab-background-color="#f7f7f7">
 </mp-tabs>
+
+<view class="label-collapse" bind:tap="handleToggleCollapse">
+  <text class="ri-more-2-fill ri-2x"></text>
+</view>
+
+<mp-halfScreenDialog show="{{showDialog}}">
+  <view slot="desc">
+    <text wx:for="{{labels}}">{{item.title}}</text>
+  </view>
+</mp-halfScreenDialog>
