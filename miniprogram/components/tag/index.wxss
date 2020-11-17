@@ -1,0 +1,6 @@
+/* components/tags/tags.wxss */
+.tags {
+  
+}
+
+.tags-body {}

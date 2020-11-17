@@ -1,0 +1,6 @@
+<!--components/tags/tags.wxml-->
+<view class="tags">
+  <view class="tags-body">
+    <slot></slot>
+  </view>
+</view>

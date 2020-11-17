@@ -1,6 +1,6 @@
 /* miniprogram/pages/topic/index.wxss */
 .weui-tabs {
-  padding: 20rpx;
+  padding: 20rpx 0;
   height: 90rpx;
   background: #f7f7f7;
   box-sizing: border-box;
@@ -27,6 +27,13 @@
   margin: 0px .5em;
 }
 
+.weui-half-screen-dialog__bd{
+  display: flex;
+}
+
+.weui-half-screen-dialog__ft {
+  display: none;
+}
 
 .label-collapse {
   position: fixed;

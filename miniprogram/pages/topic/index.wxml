@@ -8,7 +8,5 @@
 </view>
 
 <mp-halfScreenDialog show="{{showDialog}}">
-  <view slot="desc">
-    <text wx:for="{{labels}}">{{item.title}}</text>
-  </view>
+  <tag wx:for="{{labels}}" wx:key="id" slot="desc">{{item.title}}</tag>
 </mp-halfScreenDialog>
