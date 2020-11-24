@@ -1,5 +1,6 @@
 // components/tags/tags.js
 Component({
+  externalClasses: ["root"],
   /**
    * 组件的属性列表
    */
@@ -14,9 +15,14 @@ Component({
    * 组件的初始数据
    */
   data: {},
-
   /**
    * 组件的方法列表
    */
-  methods: {},
+  methods: {
+    handleTap() {
+      this.setData({
+        active: !this.properties.active,
+      });
+    },
+  },
 });

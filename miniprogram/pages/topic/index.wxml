@@ -7,6 +7,6 @@
   <text class="ri-more-2-fill ri-2x"></text>
 </view>
 
-<mp-halfScreenDialog show="{{showDialog}}">
+<mp-halfScreenDialog show="{{showDialog}}" extClass="topic-dialog">
   <tag wx:for="{{labels}}" wx:key="id" slot="desc">{{item.title}}</tag>
 </mp-halfScreenDialog>

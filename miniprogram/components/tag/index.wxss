@@ -1,6 +1,21 @@
 /* components/tags/tags.wxss */
+
+
 .tags {
-  
+  --theme: #07c160;
+  --color: #222;
+  --color-active: #fff;
+  color: var(--color);
+  margin: 5rpx;
+  border-radius: 25rpx;
+  border: 4rpx solid var(--theme);
 }
 
-.tags-body {}
+.tags--active {
+  background-color: var(--theme);
+  color: var(--color-active);
+}
+
+.tags-body {
+  padding: 5rpx 20rpx;
+}

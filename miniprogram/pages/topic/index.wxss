@@ -27,11 +27,13 @@
   margin: 0px .5em;
 }
 
-.weui-half-screen-dialog__bd{
+.topic-dialog .weui-half-screen-dialog__bd {
   display: flex;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
 }
 
-.weui-half-screen-dialog__ft {
+.topic-dialog .weui-half-screen-dialog__ft {
   display: none;
 }
 
