@@ -1,5 +1,5 @@
 <!--miniprogram/pages/topic/index.wxml-->
-<mp-tabs tabs="{{labels}}" activeTab="{{activeTab}}" activeClass="tab-bar-title__selected"
+<mp-tabs tabs="{{labels}}" model:active-tab="{{activeTab}}" activeClass="tab-bar-title__selected"
   tab-background-color="#f7f7f7">
 </mp-tabs>
 
@@ -8,5 +8,6 @@
 </view>
 
 <mp-halfScreenDialog show="{{showDialog}}" extClass="topic-dialog">
-  <tag wx:for="{{labels}}" wx:key="id" slot="desc">{{item.title}}</tag>
+  <tag wx:for="{{labels}}" wx:key="id" slot="desc" data-index="{{index}}" active="{{ activeTab === index }}"
+    bind:tap="handleTagClick">{{item.title}}</tag>
 </mp-halfScreenDialog>

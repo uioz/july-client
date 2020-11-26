@@ -27,10 +27,15 @@
   margin: 0px .5em;
 }
 
+.topic-dialog .weui-half-screen-dialog__hd {
+  height: 6em;
+}
+
 .topic-dialog .weui-half-screen-dialog__bd {
   display: flex;
   flex-wrap: wrap;
   justify-content: space-evenly;
+  padding-bottom: 40rpx;
 }
 
 .topic-dialog .weui-half-screen-dialog__ft {

@@ -1,7 +1,7 @@
 // import { APP_ID } from "../../env";
 // import { AppOption } from "../../type";
 // const app = getApp<AppOption>();
-
+import { Event } from "../../type";
 import request from "../../utils/request";
 
 interface ResponseOfLabelItem {
@@ -16,6 +16,17 @@ interface Label {
   id: number;
   title: string;
   allowed_anon: boolean;
+}
+
+interface TagClickEvent extends Event {
+  target: {
+    id: string;
+    offsetLeft: number;
+    offsetTop: number;
+    dataset: {
+      index: number;
+    };
+  };
 }
 
 // miniprogram/pages/topic/index.js
@@ -43,6 +54,15 @@ Page({
     this.setData({
       showDialog: !this.data.showDialog,
     });
+  },
+  handleTagClick(event: TagClickEvent) {
+    const tagIndex = event.target.dataset.index;
+
+    if (tagIndex != this.data.activeTab) {
+      this.setData({
+        activeTab: tagIndex,
+      });
+    }
   },
 
   /**
