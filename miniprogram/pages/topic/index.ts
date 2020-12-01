@@ -4,6 +4,9 @@
 import { Event } from "../../type";
 import request from "../../utils/request";
 
+const LIMIT_OF_PAGE = 16;
+const DEFAULT_LABEL_INDEX = -1;
+
 interface ResponseOfLabelItem {
   click_count: number;
   id: number;
@@ -29,6 +32,22 @@ interface TagClickEvent extends Event {
   };
 }
 
+interface ResponseOfTopic {
+  images: string;
+  click_count: number;
+  has_star: string;
+  star_count: string;
+  label: string;
+  is_anon: boolean;
+  id: number;
+  comment_count: string;
+  has_comment: string;
+  content: string;
+  user: string;
+  create_time: string;
+  title: string;
+}
+
 // miniprogram/pages/topic/index.js
 Page({
   /**
@@ -37,17 +56,50 @@ Page({
   data: {
     activeTab: 0,
     showDialog: false,
+    topic: [] as Array<ResponseOfTopic>,
     labels: [] as Array<Label>,
   },
 
   /**
    * 生命周期函数--监听页面加载
    */
-  async onLoad() {
-    this.setData({
-      labels: (
+  onLoad() {
+    (async () => {
+      const labels = (
         await request<Array<ResponseOfLabelItem>>({ url: "label" })
-      ).map(({ name, ...rest }) => ({ title: name, ...rest })),
+      ).map(({ name, ...rest }) => ({ title: name, ...rest }));
+
+      labels.unshift({
+        id: DEFAULT_LABEL_INDEX,
+        title: "全部",
+        allowed_anon: false,
+        click_count: 0,
+      });
+
+      this.setData({
+        labels,
+      });
+    })();
+
+    (async () => {
+      this.setData({
+        topic: await this.getTopic(),
+      });
+    })();
+  },
+  getTopic(page = 1, labelId = DEFAULT_LABEL_INDEX, size = LIMIT_OF_PAGE) {
+    const query: any = {
+      page,
+      size,
+    };
+
+    if (labelId != DEFAULT_LABEL_INDEX) {
+      query.label_id = labelId;
+    }
+
+    return request<Array<ResponseOfTopic>>({
+      url: "topic",
+      data: query,
     });
   },
   handleToggleCollapse() {

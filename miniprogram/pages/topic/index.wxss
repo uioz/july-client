@@ -1,7 +1,12 @@
 /* miniprogram/pages/topic/index.wxss */
+
+page {
+  --NavHeight: 90rpx;
+}
+
 .weui-tabs {
   padding: 20rpx 0;
-  height: 90rpx;
+  height: var(--NavHeight);
   background: #f7f7f7;
   box-sizing: border-box;
 }
@@ -50,4 +55,8 @@
   height: 90rpx;
   text-align: center;
   background-color: #f7f7f7;
+}
+
+.topic-content {
+  height: calc(100vh - var(--NavHeight));
 }

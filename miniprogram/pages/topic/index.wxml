@@ -1,13 +1,21 @@
 <!--miniprogram/pages/topic/index.wxml-->
+<!-- 顶部导航栏 -->
 <mp-tabs tabs="{{labels}}" model:active-tab="{{activeTab}}" activeClass="tab-bar-title__selected"
   tab-background-color="#f7f7f7">
 </mp-tabs>
 
+<!-- 顶部更多 -->
 <view class="label-collapse" bind:tap="handleToggleCollapse">
   <text class="ri-more-2-fill ri-2x"></text>
 </view>
 
+<!-- 底部弹出 -->
 <mp-halfScreenDialog show="{{showDialog}}" extClass="topic-dialog">
   <tag wx:for="{{labels}}" wx:key="id" slot="desc" data-index="{{index}}" active="{{ activeTab === index }}"
     bind:tap="handleTagClick">{{item.title}}</tag>
 </mp-halfScreenDialog>
+
+<!-- 内容区域 -->
+<scroll-view class="topic-content" enable-back-to-top scroll-y >
+  <text>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptate error illo laborum dicta. Delectus, cum rem totam saepe quidem inventore aut, rerum explicabo, excepturi sint libero repellendus. Suscipit, labore praesentium.</text>
+</scroll-view>
