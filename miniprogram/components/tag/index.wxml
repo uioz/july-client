@@ -1,5 +1,5 @@
 <!--components/tags/tags.wxml-->
-<view class="tags {{ active ? 'tags--active' : ''}}">
+<view class="tags root-class {{ active ? 'tags--active' : ''}}">
   <view class="tags-body">
     <slot></slot>
   </view>

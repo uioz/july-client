@@ -16,6 +16,19 @@
 </mp-halfScreenDialog>
 
 <!-- 内容区域 -->
-<scroll-view class="topic-content" enable-back-to-top scroll-y >
-  <text>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptate error illo laborum dicta. Delectus, cum rem totam saepe quidem inventore aut, rerum explicabo, excepturi sint libero repellendus. Suscipit, labore praesentium.</text>
+<scroll-view class="topic-content" enable-back-to-top scroll-y>
+  <card root-class="topic-content__card">
+    <view slot="header">
+      <view>header</view>
+    </view>
+    <text>Lorem ipsum dolor sit amet consectetur adipisicing elit. Eum, illum, commodi
+      possimus perferendis,
+      repellendus assumenda labore dolor saepe id voluptatum molestiae! Incidunt reprehenderit voluptatem cupiditate ex
+      sint esse excepturi est.</text>
+    <view slot="footer">footer</view>
+  </card>
+  <card root-class="topic-content__card">Lorem ipsum dolor sit amet consectetur adipisicing elit. Eum, illum, commodi
+    possimus perferendis,
+    repellendus assumenda labore dolor saepe id voluptatum molestiae! Incidunt reprehenderit voluptatem cupiditate ex
+    sint esse excepturi est.</card>
 </scroll-view>

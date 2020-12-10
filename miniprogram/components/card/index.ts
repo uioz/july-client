@@ -1,6 +1,9 @@
 // components/card/card.js
 Component({
-  externalClasses: ["root"],
+  options: {
+    multipleSlots: true,
+  },
+  externalClasses: ["root-class"],
   /**
    * 组件的属性列表
    */

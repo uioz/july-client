@@ -1,6 +1,7 @@
 /* miniprogram/pages/topic/index.wxss */
 
 page {
+  background: #f7f7f7;
   --NavHeight: 90rpx;
 }
 
@@ -59,4 +60,8 @@ page {
 
 .topic-content {
   height: calc(100vh - var(--NavHeight));
+}
+
+.topic-content__card {
+  margin-bottom: 1em;
 }

@@ -1,1 +1,12 @@
 /* components/card/card.wxss */
+.card {
+  display: grid;
+  grid-row-gap: .8em;
+  row-gap: .8em;
+  background: #fff;
+  padding: 1em;
+}
+
+/* .card__body {
+  margin: 1em;
+} */

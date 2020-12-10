@@ -1,5 +1,5 @@
 <!--components/card/card.wxml-->
-<view class="card">
+<view class="card root-class">
   <view class="card__header">
     <slot name="header"></slot>
   </view>
